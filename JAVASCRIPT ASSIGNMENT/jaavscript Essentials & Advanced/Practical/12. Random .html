@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #4A90E2;
+            margin: 0;
+        }
+        .quote-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .quote-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .quote {
+            font-size: 18px;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .author {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .buttons button, .buttons a {
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .buttons button:hover, .buttons a:hover {
+            background-color: #357ABD;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quote-container">
+        <h1>Quote of the Day</h1>
+        <p class="quote">"Never give up because you never know if the next try is going to be the one that works."</p>
+        <p class="author">— Mary Kay Ash</p>
+        <div class="buttons">
+            <button onclick="newQuote()">New Quote</button>
+            <a href="#">🔊</a>
+            <a href="#">📖</a>
+            <a href="#">🐦</a>
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            { quote: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+            { quote: "Do not wait to strike till the iron is hot, but make it hot by striking.", author: "William Butler Yeats" },
+            { quote: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+        ];
+
+        function newQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            document.querySelector('.quote').textContent = `"${randomQuote.quote}"`;
+            document.querySelector('.author').textContent = `— ${randomQuote.author}`;
+        }
+    </script>
+
+</body>
+</html>

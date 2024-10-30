@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .email-input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .email-input.invalid {
+            border-color: red;
+        }
+
+        .email-input.valid {
+            border-color: green;
+        }
+
+        .icon {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        .error-message {
+            color: red;
+            display: none;
+        }
+
+        .success-message {
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Email Validation</h2>
+        <input type="text" id="email" class="email-input" placeholder="Enter your email">
+        <div class="error-message" id="error-message">Invalid email address</div>
+        <div class="success-message" id="success-message">Valid email address</div>
+    </div>
+
+    <script src="scriptt.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>

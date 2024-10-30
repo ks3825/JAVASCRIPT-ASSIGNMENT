@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 580px;
+            width: 600px;
+            border: 2px solid black;
+            margin-left: 400px;
+        }
+        button{
+        padding: 10px;
+
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Marksheet for Information Technology</h1>
+        <h2>Enter Marks</h2>
+    <table cellpadding="10px">
+        <tr>
+            <td><label for="cLanguage">1. C Language</label></td>
+            <td><input type="text" id="a" value=""></td>
+        </tr>
+        <tr>
+            <td><label for="cppLanguage">2. C++ Language</label></td>
+            <td><input type="text" id="b" value=""></td>
+        </tr>
+        <tr>
+            <td><label for="database">3. Database</label> </td>
+            <td> <input type="text" id="c" value=""></td>
+        </tr>
+        <tr>
+            <td><label for="html">4. HTML</label></td>
+            <td><input type="text" id="d" value=""></td>
+        </tr>
+        <tr>
+            <td><label for="css">5. CSS</label></td>
+            <td><input type="text" id="e" value=""><br></td>
+        </tr>
+        <tr>
+            <td><label for="php">6. PHP</label></td>
+            <td><input type="text" id="f" value=""><br></td>
+        </tr>
+        <tr>
+            <td><label for="coreJava">7. Core Java</label></td>
+            <td><input type="text" id="g" value=""></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="sum()">Result</button></td>
+        </tr>
+         
+        <tr>
+            <td>
+                Total is : <span id="h">/350</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Percentage is : <span id="i">%</span>
+            </td>
+        </tr>
+
+    </table>
+    </div>
+</body>
+<script>
+    function sum() {
+        var val = document.getElementById("a").value
+        var val1 = document.getElementById("b").value
+        var val2 = document.getElementById("c").value
+        var val3 = document.getElementById("d").value
+        var val4 = document.getElementById("e").value
+        var val5 = document.getElementById("f").value
+        var val6 = document.getElementById("g").value
+
+        var sum = +val + +val1 + +val2 + +val3 + +val4 + +val5 + +val6
+
+        document.getElementById("h").innerHTML= sum
+        document.getElementById("i").innerHTML= (sum*100)/350
+    }
+</script>
+
+</html>

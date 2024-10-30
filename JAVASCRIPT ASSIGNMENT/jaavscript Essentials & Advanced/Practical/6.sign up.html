@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 350px;
+            height: auto;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        input {
+            height: 35px;
+            width: 300px;
+            display: flex;
+            margin-top: 10px;
+        }
+
+        h2 {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        p {
+            color: rgb(135, 132, 132);
+        }
+
+        button {
+            background-color: blue;
+            border: none;
+            width: 300px;
+            height: 35px;
+            margin-top: 10px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+
+            <p>Username : </p>
+            <input type="username" name="" id="Username" placeholder="js">
+            <p>Email : </p>
+            <input type="email" name="" id="Email" placeholder="">
+            <p>Password : </p>
+            <input type="password" name="" id="Password" placeholder="">
+            <p>Confirm Password</p>
+            <input type="text" name="" id="Confirm Password" placeholder="">
+            <button type="submit">SIGN UP </button>
+
+        </form>
+    </div>
+</body>
+<script>
+    function check() {
+        var username = document.getElementById("Username").value
+        var email = document.getElementById("Email").value
+        var password = document.getElementById("Password").value
+        var text= document.getElementById("Confirm Password").value
+
+        if (a==""||b==""||c==""||d==""){
+            alert("")
+            return false
+        }
+        else if(null){
+            alert("enter")
+            return false
+        }
+        else
+        {
+            true
+        }
+    }
+
+
+</script>
+
+</html>

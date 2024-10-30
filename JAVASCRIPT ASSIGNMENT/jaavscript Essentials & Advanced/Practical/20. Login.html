@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Logout System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #b79fe2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+#login-btn {
+    background-color: #28a745;
+}
+
+#logout-btn {
+    background-color: #dc3545;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="login-form">
+        <h2>Login</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="admin">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="*****">
+        <button id="login-btn">Login</button>
+    </div>
+
+    <div id="welcome-screen" style="display: none;">
+        <h2>Welcome</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <button id="logout-btn">Logout</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+
+
+document.getElementById('login-btn').addEventListener('click', function() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+
+    if (username === 'admin' && password === 'admin') {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('welcome-screen').style.display = 'block';
+    } else {
+        alert('Invalid login credentials. Please try again.');
+    }
+});
+
+document.getElementById('logout-btn').addEventListener('click', function() {
+    document.getElementById('welcome-screen').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+});
+
+</script>
+</body>
+</html>

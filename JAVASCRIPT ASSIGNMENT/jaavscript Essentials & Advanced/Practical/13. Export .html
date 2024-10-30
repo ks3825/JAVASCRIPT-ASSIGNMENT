@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export HTML Table to Excel</title>
+    <style>
+        table {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid black;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>HTML Table</h2>
+    <table id="dataTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>30</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>25</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Charlie</td>
+            <td>35</td>
+            <td>Canada</td>
+        </tr>
+    </table>
+
+    <button onclick="exportTableToExcel('dataTable', 'table-data')">Export to Excel</button>
+
+    <script>
+        function exportTableToExcel(tableID, filename = ''){
+            var downloadLink;
+            var dataType = 'application/vnd.ms-excel';
+            var tableSelect = document.getElementById(tableID);
+            var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+            // Specify filename
+            filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+            // Create download link element
+            downloadLink = document.createElement("a");
+
+            document.body.appendChild(downloadLink);
+
+            if(navigator.msSaveOrOpenBlob){
+                var blob = new Blob(['\ufeff', tableHTML], {
+                    type: dataType
+                });
+                navigator.msSaveOrOpenBlob( blob, filename);
+            } else {
+                // Create a link to the file
+                downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                // Set the file name
+                downloadLink.download = filename;
+
+                // Trigger the function
+                downloadLink.click();
+            }
+        }
+    </script>
+
+</body>
+</html>
